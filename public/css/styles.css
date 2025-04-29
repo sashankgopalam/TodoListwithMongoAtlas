@@ -1,0 +1,138 @@
+/* Global styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #7f5af0, #532fbf);
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 750px;
+    margin: 3rem auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Heading */
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #7f5af0;
+  }
+  
+  /* Add Task Form */
+  form.add-task {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  
+  .add-task input[type="text"],
+  .add-task select {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    outline: none;
+    transition: border 0.2s ease;
+  }
+  
+  .add-task input[type="text"]:focus,
+  .add-task select:focus {
+    border-color: #7f5af0;
+  }
+  
+  /* Stylish Primary Button */
+  .add-task button {
+    background-color: #7f5af0;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-task button:hover {
+    background-color: #6841d3;
+  }
+  
+  /* Task List Styles */
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f8f8ff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  li strong {
+    font-size: 1.1rem;
+    color: #2d2d2d;
+  }
+  
+  li .meta {
+    color: #888;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Action buttons */
+  .task-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .task-actions form {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  
+  .task-actions input[type="text"],
+  .task-actions select {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .task-actions button {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Edit & Delete buttons */
+  .task-actions button[title="Edit"] {
+    background-color: #4caf50;
+  }
+  .task-actions button[title="Edit"]:hover {
+    background-color: #3c9742;
+  }
+  
+  .task-actions button[title="Delete"] {
+    background-color: #f44336;
+  }
+  .task-actions button[title="Delete"]:hover {
+    background-color: #d32f2f;
+  }
+  

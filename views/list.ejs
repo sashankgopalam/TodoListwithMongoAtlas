@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+
+    <!-- Task Creation Form -->
+    <form action="/" method="POST" class="add-task">
+      <input type="text" name="title" placeholder="Task Title" required>
+      <select name="priority">
+        <option value="urgent">Urgent</option>
+        <option value="high">High</option>
+        <option value="low">Low</option>
+      </select>
+      <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Task List -->
+    <ul>
+      <% tasks.forEach(task => { %>
+        <li>
+          <strong><%= task.title %></strong>
+          <div class="meta">Priority: <%= task.priority %></div>
+
+          <div class="task-actions">
+            <!-- Delete Form -->
+            <form action="/delete" method="POST">
+              <input type="hidden" name="taskId" value="<%= task._id %>">
+              <button type="submit" title="Delete">🗑️</button>
+            </form>
+
+            <!-- Edit Form -->
+            <form action="/edit" method="POST">
+              <input type="hidden" name="taskId" value="<%= task._id %>">
+              <input type="text" name="newTitle" value="<%= task.title %>" required>
+              <select name="newPriority">
+                <option value="urgent" <%= task.priority === 'urgent' ? 'selected' : '' %>>Urgent</option>
+                <option value="high" <%= task.priority === 'high' ? 'selected' : '' %>>High</option>
+                <option value="low" <%= task.priority === 'low' ? 'selected' : '' %>>Low</option>
+              </select>
+              <button type="submit" title="Edit">🖉</button>
+            </form>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
